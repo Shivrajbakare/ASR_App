@@ -9,13 +9,7 @@ from PIL import Image, ImageTk
 
 import os
 model_path=r"C:\Users\DELL\Downloads\ASR_App\ASR_App\checkpoint-91890"
-# print(os.listdir("checkpoint-91890/"))
 
-# Define the model path
-# model_path = "checkpoint-91890/"
-
-
-# Load the processor and model
 
 processor = Wav2Vec2Processor.from_pretrained(model_path)
 processor.save_pretrained("checkpoint-91890/")
@@ -85,23 +79,6 @@ def transcribe(audio):
 
     return transcription
 
-# def transcribe(audio):
-#     # Extract input features from the audio
-#     device = "cuda" if torch.cuda.is_available() else "cpu"
-#     input_features = processor.feature_extractor(audio, sampling_rate=16000, return_tensors="pt").input_values
-#     input_features = input_features.to(device)
-
-#     # Generate transcription
-#     model.eval()
-#     with torch.no_grad():
-#         logits = model(input_features).logits
-#         predicted_ids = torch.argmax(logits, dim=-1)
-
-#     # Decode the generated IDs to text
-#     transcription = processor.decode(predicted_ids[0], skip_special_tokens=True)
-#     transcription = transcription.replace('[PAD]', '').strip()
-
-#     return transcription
 
 class AudioTranscriptionApp(tk.Tk):
     def __init__(self):
