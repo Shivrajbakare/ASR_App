@@ -17,4 +17,3 @@ This app supports transcribing audio from a GUI interface and/or an API backend.
 
 ---
 
-![Alt text]("C:\Users\DELL\Pictures\Screenshots\Screenshot 2025-07-05 121643.png")
